@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import React, {Component} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -14,26 +14,10 @@ import {SearchOutlined, MoreOutlined} from '@ant-design/icons';
 import {TabView, SceneMap} from 'react-native-tab-view';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import CustomListItem from '../components/CustomListItem';
 
 const FirstRoute = () => {
-  return (
-    <View style={styles.container}>
-      <ListItem bottomDivider containerStyle={{backgroundColor: '#131C21'}}>
-        <Avatar
-          rounded
-          source={{uri: 'https://avatars.githubusercontent.com/u/59042228?v=4'}}
-        />
-        <ListItem.Content>
-          <ListItem.Title style={{color: 'white'}}>
-            Deddy Prianto
-          </ListItem.Title>
-          <ListItem.Subtitle style={{color: '#DFE0E1'}}>
-            Haloo Developer
-          </ListItem.Subtitle>
-        </ListItem.Content>
-      </ListItem>
-    </View>
-  );
+  return <CustomListItem />;
 };
 const SecondRoute = () => {
   return (

@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {ListItem, Avatar} from 'react-native-elements';
-const CustomListItem = () => {
+const Chat = () => {
   return (
     <View style={styles.container}>
       <ListItem bottomDivider containerStyle={styles.containerListItem}>
@@ -23,7 +23,7 @@ const CustomListItem = () => {
   );
 };
 
-export default CustomListItem;
+export default Chat;
 
 const styles = StyleSheet.create({
   containerListItem: {backgroundColor: '#131C21'},

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "907353408142",
+    "project_id": "deychat-c8834",
+    "storage_bucket": "deychat-c8834.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:907353408142:android:bd6870885d70038cfaffdf",
+        "android_client_info": {
+          "package_name": "com.deychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "907353408142-i1avma712f15sehtlob7p9sqbvej75bk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deychat",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "907353408142-pl5budkl5itgn97rlhj9qj600g9ob4o8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2fnGzaWu0golRronoOntpwnLtBofQcHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "907353408142-pl5budkl5itgn97rlhj9qj600g9ob4o8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

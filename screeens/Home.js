@@ -17,27 +17,28 @@ import {useNavigation} from '@react-navigation/native';
 import Chat from '../components/Chat';
 import Status from '../components/Status';
 import Panggilan from '../components/Panggilan';
-
+import auth from '@react-native-firebase/auth';
 const FirstRoute = () => <Chat />;
 const SecondRoute = () => <Status />;
 const ThirdRouter = () => <Panggilan />;
-
-// class Component
 class Home extends React.Component {
-  state = {
-    index: 0,
-    routes: [
-      {key: 'first', title: <Text style={styles.fontColor}>Chat</Text>},
-      {key: 'second', title: <Text style={styles.fontColor}>Status</Text>},
-      {key: 'third', title: <Text style={styles.fontColor}>Panggilan</Text>},
-    ],
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      routes: [
+        {key: 'first', title: <Text style={styles.fontColor}>Chat</Text>},
+        {key: 'second', title: <Text style={styles.fontColor}>Status</Text>},
+        {key: 'third', title: <Text style={styles.fontColor}>Panggilan</Text>},
+      ],
+    };
+  }
+  componentDidMount() {
+    auth().onAuthStateChanged(state => {});
+  }
   _handleIndexChange = index => this.setState({index});
-
   _renderTabBar = props => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
-
     return (
       <View style={styles.tabBar}>
         {props.navigationState.routes.map((route, i) => {
@@ -47,7 +48,6 @@ class Home extends React.Component {
               inputIndex === i ? 1 : 0.5,
             ),
           });
-
           return (
             <TouchableOpacity
               key={i}
@@ -60,13 +60,11 @@ class Home extends React.Component {
       </View>
     );
   };
-
   _renderScene = SceneMap({
     first: FirstRoute,
     second: SecondRoute,
     third: ThirdRouter,
   });
-
   render() {
     return (
       <TabView

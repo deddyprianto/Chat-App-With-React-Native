@@ -5,7 +5,7 @@ import {Avatar, ListItem, Divider} from 'react-native-elements';
 const App = () => {
   return (
     <View style={styles.containerInti}>
-      <ListItem onPress={} containerStyle={styles.container}>
+      <ListItem containerStyle={styles.container}>
         <Avatar
           rounded
           source={{uri: 'https://avatars.githubusercontent.com/u/59042228?v=4'}}

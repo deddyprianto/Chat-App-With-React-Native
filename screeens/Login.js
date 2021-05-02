@@ -15,7 +15,7 @@ const Login = () => {
   const [initializing, setInitializing] = useState(true);
   function onAuthStateChanged(stateuser) {
     if (stateuser != null) {
-      navigation.replace('Home');
+      navigation.replace('DeyChat');
     }
     setInitializing(false);
   }
@@ -46,7 +46,7 @@ const Login = () => {
         Haloo Selamat Datang di aplikasi DeyChat
       </Text>
       <Image
-        style={{width: 200, height: 200}}
+        containerStyle={styles.imageLogo}
         PlaceholderContent={<ActivityIndicator />}
         source={{
           uri:

@@ -18,7 +18,7 @@ const App = () => {
       <StatusBar backgroundColor="#131C21" />
       <Stack.Navigator screenOptions={globalOption}>
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="DeyChat" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

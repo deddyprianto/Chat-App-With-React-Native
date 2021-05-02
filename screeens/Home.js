@@ -50,6 +50,7 @@ class Home extends React.Component {
 
           return (
             <TouchableOpacity
+              key={i}
               style={styles.tabItem}
               onPress={() => this.setState({index: i})}>
               <Animated.Text style={{opacity}}>{route.title}</Animated.Text>

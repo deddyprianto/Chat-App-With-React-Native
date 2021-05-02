@@ -4,7 +4,7 @@ import {StyleSheet, Text, View} from 'react-native';
 
 const Panggilan = () => {
   return (
-    <View>
+    <View style={styles.backgroundcolorContainer}>
       <Text></Text>
     </View>
   );
@@ -12,4 +12,8 @@ const Panggilan = () => {
 
 export default Panggilan;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+   backgroundcolorContainer: {
+      backgroundColor: '#2A2F32',
+    },
+});

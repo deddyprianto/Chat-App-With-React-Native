@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Animated,
   Text,
+  Dimensions,
 } from 'react-native';
 import {ListItem, Avatar} from 'react-native-elements';
 import {SearchOutlined, MoreOutlined} from '@ant-design/icons';
@@ -18,9 +19,12 @@ import Chat from '../components/Chat';
 import Status from '../components/Status';
 import Panggilan from '../components/Panggilan';
 import auth from '@react-native-firebase/auth';
+
 const FirstRoute = () => <Chat />;
 const SecondRoute = () => <Status />;
 const ThirdRouter = () => <Panggilan />;
+const dimension = Dimensions.get('screen');
+// metadata.photoURL
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -31,10 +35,15 @@ class Home extends React.Component {
         {key: 'second', title: <Text style={styles.fontColor}>Status</Text>},
         {key: 'third', title: <Text style={styles.fontColor}>Panggilan</Text>},
       ],
+      dimension: dimension,
+      data: [],
     };
   }
   componentDidMount() {
-    auth().onAuthStateChanged(state => {});
+    Dimensions.addEventListener('change', screen =>
+      this.setState({dimension: screen}),
+    );
+    auth().onAuthStateChanged(state => this.setState({data: state}));
   }
   _handleIndexChange = index => this.setState({index});
   _renderTabBar = props => {
@@ -72,6 +81,7 @@ class Home extends React.Component {
         renderScene={this._renderScene}
         renderTabBar={this._renderTabBar}
         onIndexChange={this._handleIndexChange}
+        initialLayout={this.state.dimension}
       />
     );
   }

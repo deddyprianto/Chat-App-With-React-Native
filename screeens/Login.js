@@ -8,13 +8,19 @@ import {
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
-
+import useStateValue from '../State/StateProvider';
+import {DATA_SUCC} from '../count/initcount';
 const Login = () => {
   // adb shell input keyevent 82
   const navigation = useNavigation();
   const [initializing, setInitializing] = useState(true);
+  const [{}, dispatch] = useStateValue();
   function onAuthStateChanged(stateuser) {
     if (stateuser != null) {
+      dispatch({
+        type: DATA_SUCC,
+        payload: stateuser,
+      });
       navigation.replace('DeyChat');
     }
     setInitializing(false);

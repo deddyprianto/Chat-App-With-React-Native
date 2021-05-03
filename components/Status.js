@@ -36,7 +36,7 @@ const Chat = () => {
 export default Chat;
 
 const styles = StyleSheet.create({
-  containerInti: {backgroundColor: '#131C21', flex: 1, paddingVertical: 30},
+  containerInti: {backgroundColor: '#131C21', flex: 1},
   container: {
     flexDirection: 'row',
     height: '15%',

@@ -7,6 +7,7 @@ import Login from './screeens/Login';
 import Home from './screeens/Home';
 import reducer, {initialState} from './reducer/reducer';
 import {StateProvider} from './State/StateProvider';
+import AddChat from './components/AddChat';
 // color #131C21 #2A2F32  warna Font=>  #DFE0E1
 const App = () => {
   const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const App = () => {
         <Stack.Navigator screenOptions={globalOption}>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="DeyChat" component={Home} />
+          <Stack.Screen name="AddChat" component={AddChat} />
         </Stack.Navigator>
       </NavigationContainer>
     </StateProvider>

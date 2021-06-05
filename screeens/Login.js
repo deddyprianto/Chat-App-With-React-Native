@@ -37,7 +37,6 @@ const Login = () => {
         webClientId:
           '907353408142-pl5budkl5itgn97rlhj9qj600g9ob4o8.apps.googleusercontent.com',
       });
-      await GoogleSignin.hasPlayServices();
       const {idToken} = await GoogleSignin.signIn();
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       return auth().signInWithCredential(googleCredential);
